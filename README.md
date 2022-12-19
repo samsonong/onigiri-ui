@@ -1,46 +1,25 @@
-# Getting Started with Create React App
+# A prestyled, zero-config, single-line component library integrated with react-hook-form and Zod
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Getting started
 
-## Available Scripts
+1. Create your form's validation schema (we use and advocate for [Zod](https://zod.dev/))
+2. Initialize [react-hook-form](https://react-hook-form.com/) with your validation schema using [@hookform/resolvers](https://github.com/react-hook-form/resolvers#zod)
+3. Pass your react-hook-form object into [Onigiri UI](https://www.npmjs.com/package/onigiri-ui) component
 
-In the project directory, you can run:
+And... Magic!
 
-### `npm start`
+![Onigiri UI implementation code](https://user-images.githubusercontent.com/5508315/208374932-80c4b49f-f788-448d-8c5d-eaa0ebdbb6b5.png "Onigiri UI implementation code")
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![Onigiri UI implementation example](https://user-images.githubusercontent.com/5508315/208375572-810b5e6a-4e7f-4edb-8b73-fb9e9af6240a.png "Onigiri UI implementation example")
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Motivation
 
-### `npm test`
+Popular component libraries out there ([MUI](https://mui.com/), [daisyUI](https://daisyui.com/), or [Tailwind UI](https://tailwindui.com/)) provide some form of states that you can readily implement in your state management. This provides a very high degree of implementation flexibility to front-end engineers.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Not every engineer need that level of flexibility.
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Roadmap
