@@ -1,0 +1,12 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer components {
+
+    .onigiri-header {
+        @apply bg-slate-50 bg-opacity-80;
+        @apply backdrop-blur-lg drop-shadow-lg;
+    }
+
+}

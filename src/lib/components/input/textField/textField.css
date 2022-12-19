@@ -1,0 +1,63 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type=number], 
+  input[type=number]:focus, 
+  input[type=number]:active {
+    -moz-appearance: textfield;
+  }
+}
+
+@layer components {
+    
+    /* Base style */
+    .onigiri-text-input-wrapper {
+        /* Prevent phones from trying to be clever with styling */
+        @apply appearance-none;
+        @apply rounded-md;
+        @apply flex flex-row w-full border;
+        @apply focus-within:ring-1;
+    }
+
+        /* Default state */
+        .onigiri-text-input-default-wrapper {
+            @apply onigiri-text-input-wrapper;
+            @apply border-primary-300;
+            /* When focused, highlight border + add ring effect */
+            @apply focus-within:border-primary-800;
+            @apply focus-within:ring-primary-300;
+        }
+
+        .onigiri-text-input-error-wrapper {
+            @apply onigiri-text-input-wrapper;
+            /* Highlight border when error */
+            @apply border-danger-500;
+            /* When focused, add ring effect */
+            @apply focus-within:ring-danger-300;
+        }
+    
+    .onigiri-text-input {
+        /* Base styling */
+        @apply bg-white w-full px-3 py-2;
+        /* Remove default browser/OS outline */
+        @apply outline-none focus:outline-none;
+        @apply appearance-none focus:appearance-none active:appearance-none;
+        /* Prevent overflowing */
+        @apply overflow-clip;
+        /* If disabled, show a very gentle shade of "you cannot do anything" 
+           This is applied in input & background */
+        @apply disabled:bg-gray-200;
+        /* If autofilled, show a gentle shade of "this is (or can be) autofilled"
+           This is applied in input & background
+           This doesn't work in most browser due to user agent style sheets
+           https://developer.mozilla.org/en-US/docs/Web/CSS/:autofill */
+        @apply autofill:bg-info-100;
+    }
+}

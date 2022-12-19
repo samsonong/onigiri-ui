@@ -1,0 +1,25 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer components {
+    .onigiri-text-input-affix-wrapper {
+        /* Base styling */
+        @apply flex-none px-3 py-2 text-center;
+        @apply bg-slate-100 text-slate-400;
+        /* Prevent overflowing */
+        @apply overflow-clip;
+    }
+
+        .onigiri-text-input-prefix-wrapper {
+            @apply onigiri-text-input-affix-wrapper;
+            /* Rounded left corners */
+            @apply rounded-tl-md rounded-bl-md;
+        }
+
+        .onigiri-text-input-suffix-wrapper {
+            @apply onigiri-text-input-affix-wrapper;
+            /* Rounded right corners */
+            @apply rounded-tr-md rounded-br-md;
+        }
+}

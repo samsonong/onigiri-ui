@@ -1,0 +1,40 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer components {
+    .onigiri-text-input-label-text {
+        /* Absolute positioning + z-50 (top-most layer) */
+        @apply absolute top-0 left-0 z-50;
+        /* Allow clicks to go through this label */
+        @apply pointer-events-none;
+        /* If input is empty, show label inside input box */
+        @apply peer-placeholder-shown:bg-none;
+        @apply peer-placeholder-shown:text-gray-400;
+        @apply peer-placeholder-shown:translate-x-0;
+        @apply peer-placeholder-shown:translate-y-0;
+        @apply peer-placeholder-shown:px-3 peer-placeholder-shown:py-2;
+        @apply peer-placeholder-shown:text-base;
+        @apply peer-placeholder-shown:rounded-md;
+        /* If input is filled or focused, show label on top box border*/
+        @apply text-xs peer-focus:text-xs;
+        @apply text-primary-800 peer-focus:text-primary-800;
+        @apply bg-white peer-focus:bg-white;
+        @apply px-1 py-0 peer-focus:px-1 peer-focus:py-0;
+        @apply rounded-none peer-focus:rounded-none;
+        @apply -translate-y-2 peer-focus:-translate-y-2;
+        @apply translate-x-2 peer-focus:translate-x-2;
+        /* Transition animation between states */
+        @apply transition-all ease-in-out;
+    }
+
+        .onigiri-text-input-label-error-text {
+            @apply onigiri-text-input-label-text;
+            @apply text-danger-500;
+        }
+
+        .onigiri-text-input-label-disabled-text {
+            @apply onigiri-text-input-label-text;
+            @apply bg-transparent;
+        }
+}

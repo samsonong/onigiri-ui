@@ -1,0 +1,23 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "../text.css";
+
+@layer components {
+    .onigiri-text-input-background {
+        /* Absolute positioning + z-10 (1 layer above input box) */
+        @apply absolute top-0 left-0 z-20;
+        /* Allow clicks to go through this label */
+        @apply pointer-events-none;
+        /* Cover input box with white if input is empty */
+        @apply w-full h-full bg-white rounded-md;
+        /* Hide when input box is filled or focused */
+        @apply collapse peer-focus:collapse peer-placeholder-shown:visible;
+        /* If disabled, show a very gentle shade of "you cannot do anything" 
+           This is applied in input & background */
+        @apply peer-disabled:bg-gray-200;
+        /* If autofilled, show a gentle shade of "this is (or can be) autofilled"
+           This is applied in input & background */
+        @apply peer-autofill:bg-danger-300;
+    }
+}

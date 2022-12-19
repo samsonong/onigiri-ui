@@ -1,0 +1,32 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import url(./layout/header.css);
+
+/* Inter font */
+:root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Inter var', sans-serif; }
+}
+
+@layer base {
+
+    body {
+        @apply bg-white dark:bg-slate-900;
+        @apply text-gray-800 dark:text-gray-400;
+    }
+    
+    a {
+        @apply underline cursor-pointer;
+        @apply text-accent-700 dark:text-white;
+    }
+
+    h1, h2, h3, h4 {
+        @apply dark:text-white;
+    }
+
+    .max-w-app-content {
+        @apply px-5 max-w-screen-2xl;
+    }
+
+}
